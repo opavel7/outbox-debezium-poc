@@ -1,0 +1,23 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/customerdb
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+## Debezium Database Properties
+customer:
+  datasource:
+    host: localhost
+    port: 5432
+    database: customerdb
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
